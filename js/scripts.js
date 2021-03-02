@@ -36,10 +36,10 @@ PASOS A SEGUIR
 - Agregar el listado al DOM
 */
 
-function CreatePerson(OnePerson) {
+function createPerson(onePerson) {
   return `
-  <li data-id="${OnePerson.id}">
-    <h3 role="button">${OnePerson.fullName}</h3>
+  <li data-id="${onePerson.id}">
+    <h3 role="button">${onePerson.fullName}</h3>
     <button>X</button>
   </li>
   `;
@@ -48,7 +48,7 @@ function CreatePerson(OnePerson) {
 function getPeopleHtmlList(people) {
   return people
     .map((person) => {
-      return CreatePerson(person)
+      return createPerson(person)
     })
     .join("");
 }
@@ -190,7 +190,7 @@ function addPerson(infoPerson) {
       return response.json();
     })
     .then((data) => {
-      htmlListElement.innerHTML += CreatePerson(data)
+      htmlListElement.innerHTML += createPerson(data)
     })
   alert(`La persona fue agregada satisfactoriamente`);
 }
